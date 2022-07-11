@@ -1,0 +1,111 @@
+.ll_intro {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    .intro_wrapper {
+        width: 800px;
+        height: 40rem;
+        overflow: hidden;
+        padding-top: 20rem;
+        transform: perspective(500px) rotateX(30deg);
+        // border: 1px solid red;
+        margin-top: -10rem;
+        h1 {
+            font-size: 4.5rem;
+            animation: autoScroll 50s linear forwards 2s infinite;
+            text-align: justify;
+            font-weight: bold;
+            line-height: 6rem;
+            margin-top: 4rem;
+            color: gold;
+
+            //horizontal line in animated into
+            .horizontal_rule {
+                border-color: gold;
+                background-color: gold;
+                height: 5px;
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+    }
+    .horizontal_line {
+        width: 900px;
+        height: 1px;
+        background-color: white;
+        position: absolute;
+        bottom: 12rem;
+        font-size: 2rem;
+    }
+    .lx_ {
+        // margin-top: 5rem;
+        position: absolute;
+        bottom: 5rem;
+        font-size: 2rem;
+        .lx-txt {
+            font-family: "Shoreline";
+            font-size: 2.1rem;
+            text-transform: capitalize;
+        }
+        .year {
+            font-style: italic;
+            text-transform: lowercase;
+        }
+    }
+}
+
+@keyframes autoScroll {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-240rem);
+    }
+}
+
+@keyframes autoScrollMob {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-320rem);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ll_intro {
+        height: auto;
+        .intro_wrapper {
+            width: 70%;
+            margin: 0 auto;
+            margin-top: -10rem;
+            height: 50rem;
+            transform: perspective(500px) rotateX(40deg);
+            h1 {
+                animation: autoScrollMob 50s linear forwards 2ms infinite;
+                font-size: 3rem;
+            }
+        }
+        .horizontal_line {
+            position: static;
+            margin: 10rem 0;
+            width: 90%;
+        }
+        .lx_ {
+            width: 90%;
+            text-align: center;
+            position: static;
+            margin-bottom: 14rem;
+            margin-top: 1rem;
+            font-size: 2.4rem;
+            .year {
+                display: block;
+            }
+        }
+    }
+}

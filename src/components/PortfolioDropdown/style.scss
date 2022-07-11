@@ -1,0 +1,193 @@
+.dropdown {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    .dropdown_wrapper {
+        width: 45%;
+        height: 60vh;
+        background-color: white;
+        // border: 2.5px solid teal;
+        border-radius: 1rem;
+        animation: popDd 1000ms ease forwards 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 10%;
+        overflow: hidden;
+        .top {
+            width: 96%;
+            height: 5rem;
+            // border-bottom: 2px solid goldenrod;
+            border-bottom: 2px solid teal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            h3 {
+                color: black;
+                font-weight: bolder;
+                font-size: 2rem;
+                text-transform: uppercase;
+                // font-family: cursive;
+            }
+        }
+        .hotels_names_div {
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            padding: 0 2rem;
+            margin-top: 1rem;
+            padding-bottom: 5rem;
+            /* width */
+            &::-webkit-scrollbar {
+                width: 7px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: teal;
+                // background: goldenrod;
+            }
+
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgba(0, 128, 128, 0.678);
+            }
+            .hotels_names_selector {
+                width: 90%;
+                height: 4rem;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                padding: 0 1rem;
+                border-radius: 1rem;
+                margin-top: 1rem;
+                // border-bottom: 1px solid black;
+                box-shadow: 0 2px 5px grey;
+                .radio_btn {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    // border: 3.5px solid rgba(218, 165, 32, 0.726);
+                    border: 3.5px solid teal;
+                    border-radius: 50%;
+                    padding: 0.5rem;
+                }
+                .hotels_names_ {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                    margin-left: 2rem;
+                    text-transform: capitalize;
+                    span {
+                        color: black;
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        // text-transform: capitalize;
+                    }
+                }
+                &:hover {
+                    // background-color: goldenrod;
+                    background-color: teal;
+                    transform: scale(0.97);
+                    .radio_btn {
+                        border: 3px solid white;
+                        // background-color: darkblue;
+                        background-color: black;
+                    }
+                    span {
+                        color: white;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .cancel_btn {
+            position: absolute;
+            top: 0px;
+            right: 1px;
+            height: 4rem;
+            width: 4rem;
+            display: grid;
+            place-items: center;
+            .icon {
+                // color: goldenrod;
+                color: teal;
+                font-size: 1.8rem;
+                cursor: pointer;
+            }
+            // &:hover {
+            //   .icon {
+            //     // color: rgb(116, 99, 4);
+            //   }
+            // }
+        }
+    }
+}
+
+@keyframes popDd {
+    0% {
+        height: 0;
+        transform: translateY(-100vh);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .dropdown {
+        height: 100%;
+        .dropdown_wrapper {
+            width: 90%;
+            height: 70vh;
+            max-height: 47vh;
+            margin-top: 30rem;
+            .top {
+                padding: 2rem 0;
+            }
+            .hotels_names_div {
+                .hotels_names_selector {
+                    height: 5rem;
+                    .hotels_names_ {
+                        span {
+                            font-size: 2rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .dropdown {
+        .dropdown_wrapper {
+            .hotels_names_div {
+                .hotels_names_selector {
+                    .hotels_names_ {
+                        span {
+                            font-size: 1.7rem;
+                            font-weight: bolder;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

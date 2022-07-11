@@ -1,0 +1,93 @@
+
+.values_card {
+  width: 320px;
+  height: 70vh;
+  // border: 1px solid var(--border-white);
+  border-radius: 1rem;
+  padding: 01rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  transition: all 500ms linear;
+  .values_card_image_div {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    // border: 1px solid red;
+    img {
+      width: 180%;
+      height: 200%;
+      object-fit: contain;
+    }
+    .two {
+      width: 150%;
+      height: 150%;
+    }
+    .three {
+      width: 170%;
+    }
+    .four {
+      width: 170%;
+    }
+    .five {
+      width: 190%;
+    }
+    .six {
+      width: 100%;
+      height: 100%;
+    }
+    .seven {
+      margin-left: -2rem;
+    }
+    .eight {
+      width: 90%;
+      height: 90%;
+    }
+  }
+  .values_para_div {
+    width: 100%;
+    height: auto;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .values_ {
+      font-size: 2.4rem;
+    }
+    p {
+      font-size: 1.6rem;
+      text-align: justify;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .values_card {
+    width: 100%;
+    height: auto;
+    .values_card_image_div {
+      height: 20rem;
+      width: 20rem;
+    }
+    .values_para_div {
+      height: auto;
+      min-height: 28vh;
+      margin-top: 5rem;
+      p {
+        font-size: 2.4rem;
+      }
+      .values_ {
+        font-size: 3.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,186 @@
+.clients_form {
+  width: 100%;
+  height: auto;
+  margin-bottom: 3rem;
+  .clients_form_wrapper {
+    width: 70%;
+    height: auto;
+    border: 1px solid var(--border-golden);
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    margin-top: 9rem;
+    .form_head {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        color: goldenrod;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid white;
+      }
+      p {
+        font-size: 1.6rem;
+        text-align: center;
+        margin: 1.5rem 0;
+      }
+    }
+    form {
+      width: 100%;
+      height: auto;
+      .required_indication {
+        width: 100%;
+        height: 5rem;
+        border: 1px solid red;
+        display: flex;
+        align-items: center;
+        border-radius: 1rem;
+        padding: 0 2rem;
+        p {
+          font-size: 1.8rem;
+          text-transform: capitalize;
+          margin-left: 1.5rem;
+        }
+        span {
+          font-size: 5rem;
+          height: 5rem;
+          color: red;
+        }
+      }
+      .input_divs {
+        width: 100%;
+        height: 14rem;
+        border: 1px solid white;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        padding: 0 2rem;
+        label {
+          font-size: 1.7rem;
+          display: flex;
+          align-items: center;
+          span {
+            font-size: 3rem;
+            color: red;
+            height: 4rem;
+            margin-left: 0.5rem;
+          }
+        }
+        p {
+          font-size: 1.8rem;
+        }
+        i {
+          font-size: 1.3rem;
+          color: lightgray;
+        }
+        .input_div {
+          width: 100%;
+          height: 5rem;
+          border-bottom: 1px solid white;
+          input {
+            width: 100%;
+            border: none;
+            outline: none;
+            height: 100%;
+            background-color: transparent;
+            color: white;
+            font-size: 2rem;
+            &:focus::placeholder {
+              color: transparent;
+            }
+          }
+          input[type="text"]::placeholder {
+            font-size: 1.5rem;
+          }
+        }
+      }
+      .input_divs_adjust {
+        height: auto;
+        padding: 2rem 2rem;
+      }
+      .checkbox_div {
+        width: 100%;
+        border: 1px solid white;
+        height: auto;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        padding: 1rem 2rem;
+        p {
+          font-size: 2rem;
+        }
+        .checkboxes {
+          width: 100%;
+          height: 5rem;
+          display: flex;
+          align-items: center;
+          input {
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid lightgrey;
+            background-color: black;
+          }
+          p {
+            font-size: 1.8rem;
+            margin-left: 1.5rem;
+          }
+        }
+      }
+      .submit_btn {
+        width: 100%;
+        height: 4rem;
+        margin-top: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input {
+          width: 25%;
+          height: 100%;
+          background: rgb(141, 104, 9);
+          text-transform: capitalize;
+          border: none;
+          font-size: 2rem;
+          color: white;
+          font-weight: 400;
+          letter-spacing: 2px;
+          border-radius: 0.3rem;
+          transition: all 100ms linear;
+          &:hover {
+            background: goldenrod;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:900px) {
+  .clients_form {
+    .clients_form_wrapper {
+      width: 95%;
+      margin-top: 10rem;
+      form {
+        margin-top: 2rem;
+        .input_divs {
+          // min-height: 15rem;
+          padding: 2rem 2rem;
+          height: auto;
+          label {
+            font-size: 2rem;
+          }
+          .input_div {
+            input[type="text"]::placeholder {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

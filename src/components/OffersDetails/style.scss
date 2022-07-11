@@ -1,0 +1,49 @@
+.offers_details{
+    width: 800px;
+    margin: 8rem auto;
+    height: 80vh;
+    border: 1px solid grey;
+    position: relative;
+    background-color: rgba(53, 50, 50, 0.623);
+    border-radius: 1rem;
+    animation: pop 800ms ease-in-out forwards 1;
+    padding: 2rem;
+    h1{
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-align: center;
+    }
+    .close_{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.7rem;
+        color: teal;
+        cursor: pointer;
+    }
+}
+
+@keyframes pop{
+    0%{
+        transform: scale(0.1);
+    }
+    70%{
+        transform: scale(1);
+    }
+    80%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:800px) {
+    .offers_details{
+        width: 90%;
+        margin-top: 12rem;
+        .close_{
+            font-size: 3rem;
+        }
+    }
+}

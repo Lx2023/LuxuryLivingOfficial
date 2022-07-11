@@ -1,0 +1,259 @@
+.pdf {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow-y: scroll;
+  .pdf_wrapper_ {
+    height: auto;
+    width: 793px;
+    margin: 0 auto;
+    .pdf_wrapper {
+      width: 793px;
+      height: auto;
+      margin: 0 auto;
+      background-color: black;
+      border: 1px solid grey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
+      .logo {
+        width: 9rem;
+        height: 9rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .line {
+        width: 90%;
+        border: 1px solid grey;
+        margin-top: 2rem;
+      }
+      .hotel_name {
+        font-size: 2rem;
+        border: 2px solid grey;
+        height: 4.5rem;
+        margin: 0 auto;
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        width: 60%;
+      }
+      .hotel_images {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        .img_left,
+        .img_right {
+          width: 45%;
+          height: 25rem;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .hotel_desc {
+        width: 90%;
+        height: auto;
+        border: 1px solid grey;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ul {
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding: 0 2rem;
+          li {
+            padding: 1rem 0;
+            height: auto;
+            font-size: 1.3rem;
+            color: goldenrod;
+            display: flex;
+            margin: 0.1rem 0;
+            text-transform: uppercase;
+            .bullet_points {
+              width: 0.5rem;
+              height: 0.5rem;
+              border-radius: 50%;
+              background-color: goldenrod;
+              margin-right: 1rem;
+              margin-top: 0.4rem;
+            }
+            .bullet_points_ {
+              width: 20%;
+            }
+            .content {
+              text-transform: capitalize;
+              margin-left: 1rem;
+              color: white;
+              font-weight: 400;
+              letter-spacing: 1px;
+              width: 80%;
+              height: auto;
+            }
+          }
+        }
+      }
+      .hotel_tip {
+        width: 90%;
+        border: 1px solid grey;
+        border-radius: 1rem;
+        margin-top: 2rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+      .flyer_details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .pdf_wrapper_mob {
+      display: none;
+    }
+    .cancel_ {
+      position: absolute;
+      top: 2rem;
+      left: 5rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      cursor: pointer;
+      color: goldenrod;
+    }
+    .download_btn {
+      width: 20%;
+      margin: 2rem auto;
+      background-color: transparent;
+      color: white;
+      border: 1px solid grey;
+      padding: 1rem 2rem;
+      margin-left: 40%;
+      cursor: pointer;
+      transition: all 300ms linear;
+      &:hover {
+        border: 1px solid goldenrod;
+        color: goldenrod;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .pdf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    // height: 120vh;
+    // overflow-y: scroll;
+    .pdf_wrapper_ {
+      padding: 5rem 0;
+      width: 380px;
+      height: 100vh;
+      .pdf_wrapper {
+        position: relative;
+        width: 90%;
+        width: 380px;
+        height: auto;
+        // border: 1px solid red;
+        .hotel_name {
+          width: 90%;
+        }
+        .hotel_images {
+          flex-direction: column;
+          .img_left,
+          .img_right {
+            width: 100%;
+            height: 25vh;
+            margin: 2rem auto;
+            img {
+              object-fit: none;
+            }
+          }
+        }
+        .hotel_desc {
+          // padding-top: 1rem;
+          height: auto;
+          ul {
+            li {
+              margin-top: 0.3rem;
+              .bullet_points{
+                width: 3px ;
+                height: 3px;
+              }
+              .bullet_points_ {
+                width: 35%;
+              }
+            }
+          }
+        }
+      }
+      .cancel_{
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+
+      }
+
+      .pdf_wrapper_mob {
+        position: relative;
+        display: flex;
+        width: 90%;
+        width: 793px;
+        height: auto;
+        margin-top: 400rem;
+        // border: 1px solid red;
+        .hotel_name {
+          width: 90%;
+        }
+        .hotel_images {
+          flex-direction: column;
+          .img_left,
+          .img_right {
+            width: 95%;
+            height: 41vh;
+            margin: 2rem auto;
+            img {
+              object-fit: none;
+            }
+          }
+        }
+      }
+      .download_btn {
+        width: 90%;
+        margin: 2rem auto;
+        margin-left: 5%;
+        margin-bottom: 8rem;
+      }
+    }
+  }
+}

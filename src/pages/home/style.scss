@@ -1,0 +1,180 @@
+.home_page {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  .home_page_wrapper {
+    margin: 0 auto;
+    width: 1000px;
+    height: auto;
+    // border: 1px solid red;
+    // for first page ------------------------------------///
+    .home_landing_page {
+      width: 100%;
+      height: 100vh;
+      // height: calc(100vh - 8rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      // margin-top: 8rem;
+      .home_landing_page_wrapper {
+        height: 90%;
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+        .heading {
+          font-family: "Shoreline";
+          font-size: 9.5rem;
+          text-align: center;
+          width: 100%;
+        }
+        .para_div {
+          margin-top: 1rem;
+          .home_page_para {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-top: 3rem;
+            line-height: 2.5rem;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    // fot values pages of the home pages
+    .values_page {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 3rem 0;
+      position: relative;
+      // border: 1px solid red;
+      .load_more_button {
+        width: 100%;
+        height: 5rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        display: grid;
+        place-items: center;
+        button {
+          width: 28%;
+          height: 4rem;
+          background-color: transparent;
+          // border: 1.5px solid white;
+          border: 1.5px solid goldenrod;
+          color: white;
+          font-size: 2rem;
+          border-radius: 6rem;
+          text-transform: uppercase;
+        }
+      }
+      .side_text {
+        position: absolute;
+        transform: rotate(90deg);
+        right: -33%;
+        // top: 34%;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 92%;
+          height: 1px;
+          background-color: white;
+          left: 4%;
+          bottom: 0.7rem;
+          box-shadow: 1px 2px 10px white;
+          animation: blinks 2s ease-in infinite alternate;
+        }
+        h3 {
+          font-size: 8rem;
+          text-transform: uppercase;
+          color: goldenrod;
+        }
+      }
+    }
+    /* for portfolio page video */
+    .home_video_portfolio {
+      width: 100%;
+      height: 100vh;
+      border: 1px solid blue;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home_page {
+    .home_page_wrapper {
+      width: 90%;
+      .home_landing_page {
+        .home_landing_page_wrapper {
+          .heading {
+            font-size: 8.5rem;
+          }
+        }
+      }
+      //   values-pages
+      .values_page {
+        justify-content: center;
+        .side_text {
+          position: static;
+          transform: rotate(0deg);
+          margin-bottom: 5rem;
+          width: 100%;
+          &::before {
+            width: 62%;
+            left:19%;
+            bottom: 0.7rem;
+          }
+          h3 {
+            font-size: 5rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home_page {
+    .home_page_wrapper {
+      width: 99%;
+      //   landing page
+      .home_landing_page {
+        // justify-content: center;
+        .home_landing_page_wrapper {
+          width: 100%;
+          height: 85%;
+          // justify-content: center;
+          .heading {
+            font-size: 6rem;
+            height: 4rem;
+            font-weight: 300;
+            text-align: center;
+          }
+          .para_div {
+            // border: 1px solid red;
+            margin-top: -5rem;
+            width: 85%;
+            .home_page_para {
+              margin-top: 2.5rem;
+              font-size: 2.1rem;
+              line-height: 3rem;
+              text-align: center;
+              word-spacing: 2px;
+            }
+          }
+        }
+      }
+      //   values-pages
+      .values_page {
+        justify-content: center;
+      }
+    }
+  }
+}

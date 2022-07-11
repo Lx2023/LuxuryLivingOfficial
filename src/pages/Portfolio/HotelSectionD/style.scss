@@ -1,0 +1,145 @@
+.port-container_ {
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  // padding-top: 150px;
+}
+
+.port-container_ .port-card {
+  max-width: 30rem;
+  min-width: 30rem;
+  height: 215px;
+  background: white;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  transition: all 700ms ease;
+  border-radius: 10px;
+}
+
+.port-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.port-container_ .port-card:hover {
+  height: 350px;
+}
+
+.port-container_ .port-card .port-text {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  left: 5px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.port-container_ .port-card .port-text h3 {
+  font-size: 2.5rem;
+  color: goldenrod  ;
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.port-container_ .port-card .port-content {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 0;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.port-container_ .port-card .port-content h2 {
+  font-size: 1px;
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  float: left;
+  visibility: hidden;
+}
+
+.port-container_ .port-card .port-content p {
+  font-family: "Raleway", sans-serif;
+}
+
+.port-container_ .port-card:hover .port-content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -10px;
+  transition-delay: 0.3s;
+  // transition: all 1s ease;
+}
+.upper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  width: 100%;
+  height: 100%;
+  border: 1px solid teal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.dropdwon_icon {
+  color: teal;
+}
+
+.upper > div {
+  flex: 1 1 auto;
+  text-align: center;
+  margin: 7px; /* and that, will result in a 10px gap */
+}
+
+.port-container_ .port-card .port-content .fourth {
+  padding: 0 7.5px;
+}
+
+.port-container_ .port-card .port-content .fifth {
+  padding: 0 15px;
+}
+
+.port-container_ .port-card .port-content .fifteenth {
+  padding: 0 30px;
+}
+
+.port-container_ .port-card .port-content a:hover {
+  cursor: pointer;
+}
+
+.dropdown {
+  width: 100%;
+  height: 173%;
+  border-radius: 9px;
+}
+
+select {
+  font-size: 1.7rem;
+}
+select option {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .port-container_ {
+    width: 100%;
+  }
+}

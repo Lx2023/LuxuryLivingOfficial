@@ -1,0 +1,38 @@
+.hotels_collabs {
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  .hotels_collabs_wrapper {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2rem;
+    h3 {
+      text-align: center;
+      font-size: 3rem;
+      text-transform: capitalize;
+      // font-family: "Shoreline";
+      color: goldenrod;
+      // font-family: cursive;
+    }
+    .new_hotels_container {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hotels_collabs {
+    width: 100%;
+    .hotels_collabs_wrapper {
+      width: 95%;
+      margin-top: 10rem;
+    }
+  }
+}

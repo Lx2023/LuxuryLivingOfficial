@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Inconsolata:wght@200;300;500;600;700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Inconsolata:wght@200;300;500;600;700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&family=Tourney:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Baloo+2&family=Inconsolata:wght@200;300;500;600;700;800;900&family=Londrina+Outline&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&family=Tourney:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400');
+
+
+@font-face {
+  font-family: "Shoreline";
+  /*Can be any text*/
+  src: local("Shoreline"),
+    url("./fonts/Shoreline.otf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+:root {
+  --border-golden: rgba(240, 188, 58, 0.507);
+  --border-white: rgba(255, 255, 255, 0.582);
+  --white: white;
+}
+
+body,
+html {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-size: 62.5%;
+}
+
+
+
+
+
+code {
+  font-family: 'Raleway', sans-serif;
+  color: rgb(179, 144, 58);
+}
+
+@media (max-width:1000px) {
+
+  body,
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width:608px) {
+
+  body,
+  html {
+    font-size: 45%;
+  }
+}
+
+
+/* animations  */
+
+@keyframes autofill {
+  0%,100% {
+      color: #666;
+      background: transparent;
+  }
+}
+
+/* animation for navbar */
+@keyframes navbar {
+  from {
+    opacity: 0.7;
+    height: 0vh;
+  }
+
+  to {
+    opacity: 1;
+    height: 100vh;
+  }
+}
+
+@keyframes navbarMob {
+  0% {
+    opacity: 0.7;
+    height: 0vh;
+  }
+
+  100% {
+    opacity: 1;
+    height: 75vh;
+  }
+}
+
+
+
+@keyframes letter {
+  0% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes about {
+  0% {
+    display: none;
+    height: 1rem;
+    width: 1rem;
+  }
+
+  100% {
+    height: 16rem;
+    width: 16rem;
+    display: block;
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    font-size: 1.8rem;
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: hidden;
+  }
+
+  75% {
+    visibility: visible;
+    clip-path: circle(0% at 50% 50%);
+  }
+
+  100% {
+    opacity: 1;
+    font-size: 1.8rem;
+    visibility: visible;
+    clip-path: circle(80% at 50% 50%);
+  }
+}
+
+
+@keyframes AboutUsLine {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* animation  for explore bkinkx */
+@keyframes blinks {
+  0% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes increHeight {
+  0% {
+    width: 0;
+    box-shadow: 1px 2px 20px white;
+  }
+}
+
+
+/* values compo */
+.left_cont ,.right_cont{
+  color: goldenrod;
+  font-size: 3rem;
+  position: absolute;
+  top: 100%;
+  width: 5rem;
+  height: 5rem;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left_cont {
+  left: 37%;
+}
+
+.right_cont {
+  right: 39%;
+}
+
+
+
+
+/* testimony compo */
+.left_cont_ ,.right_cont_{
+  color: goldenrod;
+  font-size: 3rem;
+  position: absolute;
+  top: 102%;
+  width: 44%;
+  height: 5rem;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+}
+
+.left_cont_ {
+  left: 0;
+  justify-content: flex-end;
+}
+
+.right_cont_ {
+  right: 0%;
+  width:42% ;
+}
+
+
+.right, .left{
+  width: 10rem;
+  height: 5rem;
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media screen and (max-width:1000px) {
+  .left_cont{
+    display: none;
+  }
+  .right_cont{
+    display: none;
+  }
+  .left_cont_{
+    display: none;
+  }
+  .right_cont_{
+    display: none;
+  }
+}
