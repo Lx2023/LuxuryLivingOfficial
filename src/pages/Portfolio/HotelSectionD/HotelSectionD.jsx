@@ -97,7 +97,7 @@ function HotelSectionD() {
                     />
                     <h3>{dest.name}</h3>
                 </div>
-                <div className="port-content">
+                <div className="port-content">.
                     <div className="upper">
                         <div
                             className="button"

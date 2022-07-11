@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import './styles.scss';
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import { AiOutlineArrowRight, AiOutlineArrowDown } from 'react-icons/ai'
 const OffersCard = (props) => {
     const { hotelName, offerName, room_cate, offerDetail, startDates, endDates, setDetails } = props;
 
     const [animate, setAnimate] = useState(false)
 
     const handleClick = () => {
-        setAnimate(true);
-        setTimeout(() => {
-            setDetails(true);
-        }, 500);
+        if (!animate || animate) {
+            setAnimate(!animate);
+        }
+        // setTimeout(() => {
+        //     setDetails(true);
+        // }, 500);
     }
     return (
         <div className='offers_card' style={{
-            animation: animate && 'shrink 500ms ease-in forwards 1'
+            height: animate && '500px',
         }}>
             <div className="hotel_name">
                 <div className="img">
@@ -31,7 +33,7 @@ const OffersCard = (props) => {
                 <p className="offer_detail">{offerDetail}</p>
                 <p className="dates">Offer starts on {startDates}</p>
                 <p className="dates">Offer ends on {endDates} </p>
-                <button className="more_details" onClick={handleClick}>More details <AiOutlineArrowRight className='arrow' /></button>
+                <button className="more_details" onClick={handleClick}>More details {animate ? <AiOutlineArrowDown className='arrow' /> : <AiOutlineArrowRight className='arrow' />}</button>
             </div>
         </div>
     )
