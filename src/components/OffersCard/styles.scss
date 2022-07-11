@@ -8,7 +8,6 @@
   margin-bottom: 3rem;
   padding: 0 1.5rem;
   padding-bottom: 2rem;
-  transition: all 300ms linear;
   &:hover {
     transform: scale(1.03);
   }
@@ -161,5 +160,25 @@
         font-size: 1.7rem;
       }
     }
+  }
+}
+
+@keyframes offer_card_length {
+  from {
+    height: 300px;
+  }
+
+  to {
+    height: 500px;
+  }
+}
+
+@keyframes offer_card_decrease {
+  from {
+    height: 500px;
+  }
+  
+  to {
+    height: 260px;
   }
 }

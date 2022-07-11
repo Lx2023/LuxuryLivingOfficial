@@ -16,6 +16,8 @@ const OffersCard = (props) => {
     }
     return (
         <div className='offers_card' style={{
+            animationName: animate ? "offer_card_length" : "offer_card_decrease",
+            animationDuration: "1s",
             height: animate && '500px',
         }}>
             <div className="hotel_name">
