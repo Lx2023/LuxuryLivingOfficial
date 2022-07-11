@@ -111,11 +111,11 @@ const HotelDesc = () => {
   let settingsImg = {
     dots: true,
     infinite: true,
-    speed: 200,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: autoPlay,
-    autoplaySpeed: 4000,
+    autoplay: true,
+    autoplaySpeed: 2000,
     swipeToSlide: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -220,7 +220,7 @@ const HotelDesc = () => {
                     {
                       pics.map((pics, ind) => (
                         <div className="img" key={ind}>
-                          <img src={pics.url} alt="" />
+                          <img src={pics.url} alt="hotel services" />
                         </div>
                       ))
                     }

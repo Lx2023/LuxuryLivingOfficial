@@ -62,11 +62,12 @@ const Dropdown = ({ ShowModal, destination, filterByD, hotels }) => {
                                             // navigate(`/luxury-living-portfolio/${hotels.name}/${hotels.id}`)
                                         }, 100);
                                     }}>
-                                    <div className="radio_btn"></div>
+                                    <div className="hotel_image_container">
+                                        <img className="hotel_image" src={hotels.pictures[0].url} alt="Hotel"/>
+                                    </div>
                                     <div className="hotels_names_">
                                         <span>{hotels.name}</span>
                                         <span>{hotels.location}</span>
-                                        {console.log("right now ", hotels)}
                                     </div>
                                 </div>
                             ))
