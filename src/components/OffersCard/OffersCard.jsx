@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './styles.scss';
-import { AiOutlineArrowRight, AiOutlineArrowDown } from 'react-icons/ai'
+import { AiOutlineArrowUp, AiOutlineArrowDown } from 'react-icons/ai'
+import { useEffect } from 'react';
 const OffersCard = (props) => {
-    const { hotelName, offerName, room_cate, offerDetail, startDates, endDates } = props; // setDetails also was included
+    const { hotelId, postDate, hotelName, offerName, room_cate, offerDetail, startDates, endDates } = props; // setDetails also was included
 
     const [animate, setAnimate] = useState(false)
 
@@ -14,6 +15,22 @@ const OffersCard = (props) => {
         //     setDetails(true);
         // }, 500);
     }
+
+    function reverseString(str) {
+        let splitString = str.split("-")
+        let reversed = splitString.reverse()
+        let resultString = reversed.join("-")
+        return resultString;
+    }
+
+    const [hotelImage, setHotelImage] = useState();
+
+    useEffect(() => {
+        fetch(`http://api.luxuryliving.in/hotel?pk=${hotelId}&&key=9d3480fc-49c4-4427-b19e-3f70d753656d`)
+        .then((response) => response.json())
+        .then((responseData) => setHotelImage(responseData.pictures[0].url))
+    })
+
     return (
         <div className='offers_card' style={{
             animationName: animate ? "offer_card_length" : "offer_card_decrease",
@@ -22,20 +39,20 @@ const OffersCard = (props) => {
         }}>
             <div className="hotel_name">
                 <div className="img">
-                    <img src="https://images.unsplash.com/photo-1516531558361-f6c4c956ad85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bmlnaHQlMjBob3RlbHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                    <img src={hotelImage ? hotelImage : " "} alt="" />
                 </div>
                 <div className="hotel_">
                     <h3>{hotelName}</h3>
-                    <p>1 week ago</p>
+                    <p>Posted On : {postDate ? reverseString(`${postDate.slice(0,10)}`) : "Loading..."}</p>
                 </div>
             </div>
             <div className="offer_details">
                 <h4 className="offer_name">{offerName}</h4>
-                <h6 className="room_category">{room_cate}</h6>
-                <p className="offer_detail">{offerDetail}</p>
-                <p className="dates">Offer starts on {startDates}</p>
-                <p className="dates">Offer ends on {endDates} </p>
-                <button className="more_details" onClick={handleClick}>More details {animate ? <AiOutlineArrowDown className='arrow' /> : <AiOutlineArrowRight className='arrow' />}</button>
+                <h6 className="room_category" style={{overflow: animate && "visible", WebkitLineClamp: animate && "100"}}>Room Categories : {room_cate} </h6>
+                <p className="offer_detail" style={{overflow: animate && "visible", WebkitLineClamp: animate && "100"}}>{offerDetail}</p>
+                <p className="dates">Offer starts on {reverseString(startDates)}</p>
+                <p className="dates">Offer ends on {reverseString(endDates)} </p>
+                <button className="more_details" onClick={handleClick}>More details {animate ? <AiOutlineArrowUp className='arrow' /> : <AiOutlineArrowDown className='arrow' />}</button>
             </div>
         </div>
     )

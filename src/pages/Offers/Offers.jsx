@@ -15,7 +15,8 @@ import OffersDetails from '../../components/OffersDetails/OffersDetails';
 
 const OffersCard = React.lazy(() => import('../../components/OffersCard/OffersCard'))
 
-
+const apiUrl = "http://api.luxuryliving.in/"
+const apiKey = "key=9d3480fc-49c4-4427-b19e-3f70d753656d"
 
 const Offers = () => {
     // const [index, setIndex] = useState(0);
@@ -24,6 +25,7 @@ const Offers = () => {
     const [details, setDetails] = useState(false)
     // const [checked, setChecked] = useState();
     const [filters, setFilters] = useState([]);
+    const [offerData, setOfferData] = useState([])
 
     // handling filtering side bar
     const handleSidebar = () => {
@@ -67,7 +69,29 @@ const Offers = () => {
 
     useEffect(() => {
         document.title = 'Luxury Living - Offers'
+        fetch(`${apiUrl}offers?${apiKey}`)
+        .then((response) => response.json())
+        .then((actualData) => setOfferData(actualData))
     }, [])
+
+    // iterating offers
+    const offerComponent = offerData.map((data) => {
+
+        return (
+            <OffersCard
+                key={data.id}
+                hotelName={data.name}
+                offerName={data.name}
+                room_cate={data.categories}
+                offerDetail={data.description}
+                startDates={data.offer_start_date}
+                endDates={data.offer_end_date}
+                setDetails={setDetails}
+                postDate={data.created_at}
+                hotelId={data.hotel_id}
+            />
+        )
+    })
 
    
     const search = (e) => {
@@ -101,8 +125,8 @@ const Offers = () => {
                                 </form>
                                 <div className="offers_">
                                     {/* offers cards should be added here  */}
-
-                                    <OffersCard
+                                    {offerComponent}
+                                    {/* <OffersCard
                                         hotelName='aman resorts'
                                         offerName='offer name'
                                         room_cate='room category'
@@ -119,12 +143,12 @@ const Offers = () => {
                                         startDates='june 01 2022'
                                         endDates='july 01 2022'
                                         setDetails={setDetails}
-                                    />
+                                    /> */}
                                     <OffersCard
                                         hotelName='aman resorts'
                                         offerName='offer name'
                                         room_cate='room category'
-                                        offerDetail='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt. PlLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt. Pl'
+                                        offerDetail='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt. PlLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem.'
                                         startDates='june 01 2022'
                                         endDates='july 01 2022'
                                         setDetails={setDetails}
@@ -133,7 +157,7 @@ const Offers = () => {
                                         hotelName='aman resorts'
                                         offerName='offer name'
                                         room_cate='room category'
-                                        offerDetail='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt. PlLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt. Pl'
+                                        offerDetail='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt. PlLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem.'
                                         startDates='june 01 2022'
                                         endDates='july 01 2022'
                                         setDetails={setDetails}
