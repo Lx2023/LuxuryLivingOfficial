@@ -5,6 +5,9 @@ const Dummy = () => {
         <div className="ll_intro">
             <div className="intro_wrapper">
                 <h1>
+                    <div className="intro_one">
+                        <p>1</p>
+                    </div>
                     We are a B2B travel company and we only work with high-end /
                     luxury hotels & resorts. We take pride in being the only one
                     of our kind in the Indian Subcontinent.
@@ -20,8 +23,9 @@ const Dummy = () => {
                     consultative in their approach.
                 </h1>
                 <h1>
-                    <hr className="horizontal_rule" />
-                    <br />
+                    <div className="intro_one">
+                        <p>2</p>
+                    </div>
                     We always book direct with our partner hotels. No shortcuts.
                     No bypass. If a hotel is not a part of our portfolio, then
                     we don't promote it.
@@ -30,8 +34,9 @@ const Dummy = () => {
                     <br />
                 </h1>
                 <h1>
-                    <hr className="horizontal_rule" />
-                    <br />
+                    <div className="intro_one">
+                        <p>3</p>
+                    </div>
                     Apart from servicing some of the established luxury travel
                     companies, we also support & encourage new travel companies
                     who wish to enter into the luxury travel space. We coach

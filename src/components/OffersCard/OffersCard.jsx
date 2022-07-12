@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './styles.scss';
 import { AiOutlineArrowRight, AiOutlineArrowDown } from 'react-icons/ai'
 const OffersCard = (props) => {
-    const { hotelName, offerName, room_cate, offerDetail, startDates, endDates, setDetails } = props;
+    const { hotelName, offerName, room_cate, offerDetail, startDates, endDates } = props; // setDetails also was included
 
     const [animate, setAnimate] = useState(false)
 
@@ -18,7 +18,7 @@ const OffersCard = (props) => {
         <div className='offers_card' style={{
             animationName: animate ? "offer_card_length" : "offer_card_decrease",
             animationDuration: "1s",
-            height: animate && '500px',
+            height: animate && '450px',
         }}>
             <div className="hotel_name">
                 <div className="img">

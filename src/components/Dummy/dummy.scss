@@ -15,6 +15,19 @@
         transform: perspective(500px) rotateX(30deg);
         // border: 1px solid red;
         margin-top: -10rem;
+        .intro_one {
+            max-height: 50px;
+            max-width: 50px;
+            border-radius: 50%;
+            border: 2px solid gold;
+            margin-left: 46%;
+            
+            p {
+               text-align: center;
+               margin-top: -10px;
+            }
+
+        }
         h1 {
             font-size: 4.5rem;
             animation: autoScroll 50s linear forwards 2s infinite;
@@ -86,6 +99,22 @@
             margin-top: -10rem;
             height: 50rem;
             transform: perspective(500px) rotateX(40deg);
+
+            .intro_one {
+                max-height: 40px;
+                max-width: 40px;
+                border-radius: 50%;
+                border: 2px solid gold;
+                margin-left: 44%;
+                
+                p {
+                   text-align: center;
+                   margin-top: -6px;
+                   font-size: 3.4rem;
+                }
+    
+            }
+
             h1 {
                 animation: autoScrollMob 50s linear forwards 2ms infinite;
                 font-size: 3rem;

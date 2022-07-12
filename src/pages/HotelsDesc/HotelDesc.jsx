@@ -24,7 +24,7 @@ const HotelDesc = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [showShare, SetShowShare] = useState(false);
-  const [autoPlay, setAutoPlay] = useState(true);
+  // const [autoPlay, setAutoPlay] = useState(true);
   const [loading, setLoading] = useState(false);
   const [hotel, setHotel] = useState({});
   const [pics, setPics] = useState([]);
@@ -68,7 +68,7 @@ const HotelDesc = () => {
       behavior: 'smooth'
     })
     setTimeout(() => {
-      setAutoPlay(false)
+      // setAutoPlay(false)
     }, 9000);
   })
 
