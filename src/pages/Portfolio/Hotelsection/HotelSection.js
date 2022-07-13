@@ -60,6 +60,22 @@ function Port() {
                 setIsOpen(false)
         }
     }
+
+
+    // API Sorting algo (sorting with descding alphatical order)
+    const resultBrands = []
+
+    const dataArray = brands.map((item) => {
+        return item.name
+    });
+    const sortedDataArray = (dataArray.sort())
+
+    brands.forEach((item, index) => {
+        const anotherData = brands.find((items) => items.name === sortedDataArray[index])
+        resultBrands.push(anotherData)
+    })
+
+
     return (
         <>
             {
@@ -72,13 +88,12 @@ function Port() {
                         <div className="port-container">
 
                             {
-                                brands.map((b, ind) => (
+                                resultBrands.map((b, ind) => (
                                     <div className="port-card" key={b.id} data-aos={`${animations(ind)}`}>
                                         <div className="port-imgBx">
                                             <img src={b.logo_url} alt="brands_img" />
                                         </div>
                                         <div className="port-content">
-
                                             <div className="upper">
                                                 <div className="button" onClick={() => {
                                                     ShowModal();

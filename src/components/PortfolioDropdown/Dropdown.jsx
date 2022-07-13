@@ -56,10 +56,6 @@ const Dropdown = ({ ShowModal, destination, filterByD, hotels }) => {
             : setFilteredHotels(hotelsByBrands);
     }, [destination, filterByD, hotels, data]);
 
-    const testConsole = "morroco";
-
-    const firstLetter = testConsole.charAt(0)
-
     return (
         <>
             <div className="dropdown">
