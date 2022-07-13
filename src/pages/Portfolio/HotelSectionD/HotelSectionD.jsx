@@ -35,7 +35,6 @@ function HotelSectionD() {
         fetchData();
     }, []);
 
-
     // useEffect(() => {
     //     Aos.init({ duration: 1500 });
     //     const destArr = hotels.map((d) => d.destination);
@@ -75,7 +74,19 @@ function HotelSectionD() {
         }
     };
 
-    const destinationData = destinationImages.map((dest, index) => {
+    const resultDestination = []
+
+    const dataArray = destinationImages.map((item) => {
+        return item.name
+    });
+    const sortedDataArray = (dataArray.sort())
+
+    destinationImages.forEach((item, index) => {
+        const anotherData = destinationImages.find((items) => items.name === sortedDataArray[index])
+        resultDestination.push(anotherData)
+    })
+
+    const destinationData = resultDestination.map((dest, index) => {
         return (
             <div
                 key={index}
@@ -86,18 +97,14 @@ function HotelSectionD() {
                     {/* if image is not availabe in api then using a default one */}
                     <img
                         className="port-logo"
-                        src={
-                            dest.icon_url === null
-                                ? ""
-                                : dest.icon_url
-                        }
+                        src={dest.icon_url === null ? "" : dest.icon_url}
                         width="100px"
                         height="100px"
                         alt="destination-logo"
                     />
                     <h3>{dest.name}</h3>
                 </div>
-                <div className="port-content">.
+                <div className="port-content">
                     <div className="upper">
                         <div
                             className="button"
