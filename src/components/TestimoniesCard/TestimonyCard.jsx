@@ -9,7 +9,7 @@ const Testimaonialscard = ({ testimony, border  }) => {
             <div className={`testimonials_card_para_div`}>
                 {
                     // <p className={`${testimony.class}`}>{testimony.feedbackMessage}</p>
-                    testimony.feedbackMessage.split('\n').map(str => <p >{str}</p>)
+                    testimony.feedbackMessage.split('\n').map(str => <p>{str}</p>)
                 }
             </div>
             <div className="info">

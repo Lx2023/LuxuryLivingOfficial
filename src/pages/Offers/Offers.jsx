@@ -70,8 +70,18 @@ const Offers = () => {
     useEffect(() => {
         document.title = 'Luxury Living - Offers'
         fetch(`${apiUrl}offers?${apiKey}`)
-        .then((response) => response.json())
-        .then((actualData) => setOfferData(actualData))
+        .then((response) => {
+            if (response.ok) {
+                return response.json()
+            }
+            throw new Error("Something went wrong")
+        })
+        .then((actualData) => {
+            setOfferData(actualData)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
     }, [])
 
     // iterating offers
@@ -148,7 +158,7 @@ const Offers = () => {
                                         hotelName='aman resorts'
                                         offerName='offer name'
                                         room_cate='room category'
-                                        offerDetail='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt. PlLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem.'
+                                        offerDetail='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt. PlLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores culpa reprehenderit voluptatem. Quam nostrum laudantium dolore, alias voluptatibus explicabo doloribus itaque voluptate tempora ab cum dolores odit sunt.'
                                         startDates='june 01 2022'
                                         endDates='july 01 2022'
                                         setDetails={setDetails}

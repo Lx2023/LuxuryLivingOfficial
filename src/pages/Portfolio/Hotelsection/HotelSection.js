@@ -85,7 +85,7 @@ function Port() {
                                                     setDestination(b.id)
                                                     // setDestination(b.name.toLowerCase())
                                                     // console.log(b.brands.toLowerCase());
-                                                }}>select Your Destination <CaretDownOutlined className='dropdwon_icon' /></div>
+                                                }}>Select Your Hotel<CaretDownOutlined className='dropdwon_icon' /></div>
                                             </div>
                                         </div>
                                     </div>

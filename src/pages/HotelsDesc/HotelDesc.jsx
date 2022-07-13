@@ -250,7 +250,7 @@ const HotelDesc = () => {
                       </li>
                       <li>
                         <div className="bullet_points"></div>
-                        <div className="bullet_points_">Accomdation :</div>
+                        <div className="bullet_points_">Accommodation :</div>
                         <div className="content"> {hotel.accomodation}</div>
                       </li>
                     </ul>

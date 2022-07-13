@@ -63,6 +63,8 @@ const HotelsCards = ({ d }) => {
     const [phone, setPhone] = useState('');
     const [showPdf, setShowPdf] = useState(false);
 
+    console.log(d)
+
     const addFlyerDownload = () => {
         if (!name || !agency || !phone) {
             toast.error('Please fill all the fields')

@@ -117,7 +117,7 @@ a{
     font-weight:400;
     text-decoration:none;
     &:hover{
-        color:blue;
+        color:gold;
     }
 }
 @media(max-width:540px){
@@ -145,7 +145,7 @@ a{
     font-weight:400;
     text-decoration:none;
     &:hover{
-        color:blue;
+        color:gold;
     }   
 }
 @media(max-width:540px){

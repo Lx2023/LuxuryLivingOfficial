@@ -105,7 +105,7 @@ object-fit:cover;
 
 const Span = styled.span`
     font-size:1.9rem;
-a{
+a {
     color:white;
     font-weight:400;
     text-decoration:none;

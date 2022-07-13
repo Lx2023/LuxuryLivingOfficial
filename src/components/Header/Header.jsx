@@ -59,7 +59,7 @@ const Header = ({ display }) => {
         </div>
 
         {
-          IsOpen && <Navbar />
+          IsOpen && <Navbar navRemove={showNavbar}/>
         }
       </div>
     </nav>

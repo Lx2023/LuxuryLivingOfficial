@@ -106,7 +106,7 @@ function HotelSectionD() {
                                 setDestination(dest.name);
                             }}
                         >
-                            select Your Destination{" "}
+                            Select Your Destination{" "}
                             <CaretDownOutlined className="dropdwon_icon" />
                         </div>
                     </div>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-const Navbar = () => {
+const Navbar = ({navRemove}) => {
     const navigate = useNavigate()
     const toTop = () => {
         window.scroll({
             top: 0,
-            behavior: 'auto'
+            behavior: 'auto',
         })
     }
     return (
@@ -15,6 +15,10 @@ const Navbar = () => {
                 onClick={() => {
                     navigate('/')
                     toTop()
+
+                    // To remove the overlay if the user click on allready landed page
+                    navRemove()
+
                 }}
             ><span className='span'>home</span> </Nav>
 
@@ -22,6 +26,7 @@ const Navbar = () => {
                 onClick={() => {
                     navigate('/luxury-living-portfolio')
                     toTop()
+                    navRemove()
                 }}
             ><span className='span'>View our Hotel's Portfolio</span> </Nav>
 
@@ -29,6 +34,7 @@ const Navbar = () => {
                 onClick={() => {
                     navigate('/sign-up-agents')
                     toTop()
+                    navRemove()
                 }}
             ><span className='span'>Sign up / Login for Agent Partners</span> </Nav>
 
@@ -36,6 +42,7 @@ const Navbar = () => {
                 onClick={() => {
                     navigate('/luxury-living-clients-preference')
                     toTop()
+                    navRemove()
                 }}
             ><span className='span'>FILL CLIENT'S PREFERENCE FORM</span> </Nav>
 
@@ -43,6 +50,7 @@ const Navbar = () => {
                 onClick={() => {
                     navigate('/hotel-partners')
                     toTop()
+                    navRemove()
                 }}
 
             ><span className='span'>Collaborative Info for Hotel Partners</span> </Nav>
@@ -51,6 +59,7 @@ const Navbar = () => {
                 onClick={() => {
                     navigate('/feedback')
                     toTop()
+                    navRemove()
                 }}
             ><span className='span'>Say 'Nice – Not So Nice' Things About Us!</span> </Nav>
 
@@ -58,6 +67,7 @@ const Navbar = () => {
                 onClick={() => {
                     navigate('/contactus')
                     toTop()
+                    navRemove()
                 }}
             ><span className='span'>Contact Us</span> </Nav>
 
@@ -65,6 +75,7 @@ const Navbar = () => {
                 onClick={() => {
                     navigate('/aboutus')
                     toTop()
+                    navRemove()
                 }}
             ><span className='span'>About Us</span> </Nav>
         </Container>
@@ -74,7 +85,7 @@ const Navbar = () => {
 const Container = styled.div`
 height:100vh;
 width:100%;
-background-color:teal;
+background-color: teal;
 z-index:12;
 position:fixed;
 top:0;
@@ -84,7 +95,6 @@ bottom:0;
 transition:all 500ms;
 animation:navbar 500ms;
 opacity:1;
-background-color:teal;
 padding-top:1rem;
 display:flex;
 flex-direction:column;
@@ -118,7 +128,7 @@ justify-content:space-evenly;
 const Nav = styled.span`
 font-size:3.8rem;
 color:white;
-font-weight:bolder;
+font-weight:400;
 text-transform:uppercase;
 line-height:1;
 transition:all 200ms;
