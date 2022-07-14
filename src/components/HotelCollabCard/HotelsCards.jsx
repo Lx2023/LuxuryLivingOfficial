@@ -63,7 +63,7 @@ const HotelsCards = ({ d }) => {
     const [phone, setPhone] = useState('');
     const [showPdf, setShowPdf] = useState(false);
 
-    console.log(d)
+    console.log("This is the Data", d)
 
     const addFlyerDownload = () => {
         if (!name || !agency || !phone) {
@@ -167,13 +167,13 @@ const HotelsCards = ({ d }) => {
                     <div className="new_hotel_card_left">
                         <Slider {...settings} className="hotel_desc_img">
                             <div className="img" >
-                                <img src={d.img1} alt="" />
+                                <img src={d.pictures[0].url} alt="" />
                             </div>
                             <div className="img" >
-                                <img src={d.img2} alt="" />
+                                <img src={d.pictures[1].url} alt="" />
                             </div>
                             <div className="img" >
-                                <img src={d.img3} alt="" />
+                                <img src={d.pictures[2].url} alt="" />
                             </div>
                         </Slider>
                     </div>
@@ -181,7 +181,7 @@ const HotelsCards = ({ d }) => {
                         <div className="logo">
                             <img src={`images/${d.logo}`} alt="" />
                         </div>
-                        <h3 className="name">Hotel Name Should Be {d.hotelname}</h3>
+                        <h3 className="name">{d.name}</h3>
                         <div className="about_hotel">
                             <ul>
                                 <li>

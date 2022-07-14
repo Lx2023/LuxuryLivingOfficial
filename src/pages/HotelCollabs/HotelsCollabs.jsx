@@ -7,13 +7,30 @@ import Loading from '../../utils/Loading/Loading';
 
 const HotelsCards = React.lazy(() => import('../../components/HotelCollabCard/HotelsCards'))
 
+const apiUrl = "http://api.luxuryliving.in/"
+const apiKey = "key=9d3480fc-49c4-4427-b19e-3f70d753656d"
+
 const HotelsCollabs = () => {
 
     const [data, setData] = useState([])
 
     useEffect(() => {
         document.title = 'Luxury Living - Hotels collabs'
-        setData(newHotels)
+
+        fetch(`${apiUrl}collaborations?${apiKey}`)
+        .then((response) => {
+            if (response.ok) {
+                return response.json()
+            }
+            throw new Error("Something went wrong")
+        })
+        .then((actualData) => {
+            setData(actualData)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+
     }, [])
 
     return (
