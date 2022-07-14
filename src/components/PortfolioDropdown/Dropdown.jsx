@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import { CloseOutlined } from "@ant-design/icons";
+
+import "./style.scss";
 // import axios from 'axios';
 // import { appUrl } from '../../config/appUrl'
 

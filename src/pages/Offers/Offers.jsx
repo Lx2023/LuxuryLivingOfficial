@@ -103,6 +103,7 @@ const Offers = () => {
         )
     })
 
+    console.log(offerData)
    
     const search = (e) => {
         e.preventDefault();

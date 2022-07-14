@@ -85,7 +85,7 @@ const Navbar = ({navRemove}) => {
 const Container = styled.div`
 height:100vh;
 width:100%;
-background-color: teal;
+background-color: #1c1802;
 z-index:12;
 position:fixed;
 top:0;
@@ -117,7 +117,7 @@ justify-content:space-evenly;
     transition:all 200ms;
     margin-top:2rem;
     &:hover{
-        color:black;
+        color:gold;
     }
 @media (max-width:700px){
     align-items:center;

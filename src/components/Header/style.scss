@@ -1,128 +1,164 @@
 .header {
-  top: 0;
-  left: 3.5rem;
-  width: 5rem;
-  height: 80%;
-  position: fixed;
-  background-color: black;
-  z-index: 111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .header_wrapper {
-    width: 100%;
-    height: 95%;
+    top: 0;
+    left: 3.5rem;
+    width: 5rem;
+    height: 80%;
+    position: fixed;
+    background-color: black;
+    z-index: 111;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .ham_div {
-      width: 5rem;
-      height: 5rem;
-    }
-    .navs_right {
-      width: 100%;
-      height: 25%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      .navs {
-        width: 5rem;
-        height: auto;
+    align-items: center;
+    justify-content: center;
+    .header_wrapper {
+        width: 100%;
+        height: 95%;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        position: relative;
-        .img {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img {
-            width: 70%;
-            height: 70%;
-            object-fit: cover;
-          }
-          .icon {
-            font-size: 3rem;
-            color: goldenrod;
-          }
+        flex-direction: column;
+        justify-content: space-between;
+        .ham_div {
+            width: 5rem;
+            height: 5rem;
         }
-        .link {
-          width: 0;
-          position: absolute;
-          letter-spacing: 1px;
-          left: 4rem;
-          transform: rotateY(30deg);
-          transition: all 600ms linear;
-          overflow: hidden;
-          position: absolute;
-          background-color: black;
-          border-radius: 10rem;
-          .links {
-            position: relative;
-            color: transparent;
-            font-weight: 400;
-            font-size: 1.7rem;
-            height: 2rem;
-            &:hover {
-              border-bottom: 1px solid goldenrod;
-            }
-          }
-          .links::before {
-            transition: all 600ms linear;
-            content: attr(data-text);
-            position: absolute;
-            color: white;
+        .navs_right {
             width: 100%;
-            height: 100%;
-            overflow: hidden;
-          }
-        }
-        &:hover {
-          .link {
-            width: 25rem;
-            .links::before {
-              color: goldenrod;
-              width: 100%;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            .navs {
+                width: 5rem;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                position: relative;
+                .img {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        width: 70%;
+                        height: 70%;
+                        object-fit: cover;
+                    }
+                    .icon {
+                        font-size: 3rem;
+                        color: goldenrod;
+                    }
+                }
+                .link {
+                    width: 0;
+                    position: absolute;
+                    letter-spacing: 1px;
+                    left: 4rem;
+                    transform: rotateY(30deg);
+                    transition: all 600ms linear;
+                    overflow: hidden;
+                    position: absolute;
+                    background-color: black;
+                    border-radius: 10rem;
+                    .links {
+                        position: relative;
+                        color: transparent;
+                        font-weight: 400;
+                        font-size: 1.7rem;
+                        height: 2rem;
+                        &:hover {
+                            border-bottom: 1px solid goldenrod;
+                        }
+                    }
+                    .links::before {
+                        transition: all 600ms linear;
+                        content: attr(data-text);
+                        position: absolute;
+                        color: white;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                    }
+                }
+                &:hover {
+                    .link {
+                        width: 25rem;
+                        .links::before {
+                            color: goldenrod;
+                            width: 100%;
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
+}
+
+@media screen and (max-width: 1200px) {
+    .header {
+        height: 8rem;
+        width: 100%;
+        left: 0;
+        .header_wrapper {
+            height: 100%;
+            width: 100%;
+            flex-direction: row;
+            .ham_div {
+                height: 8rem;
+                width: 8rem;
+                margin-top: 6px;
+            }
+            .navs_right {
+                width: 30%;
+                height: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-right: 2rem;
+                .navs {
+                    .img {
+                        img {
+                            width: 4rem;
+                        }
+                        .icon {
+                            font-size: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
-  .header {
-    height: 8rem;
-    width: 100%;
-    left: 0;
-    .header_wrapper {
-      height: 100%;
-      width: 100%;
-      flex-direction: row;
-      .ham_div {
+    .header {
         height: 8rem;
-        width: 8rem;
-      }
-      .navs_right {
-        width: 30%;
-        height: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-right: 2rem;
-        .navs {
-          .img {
-            img {
-              width: 4rem;
+        width: 100%;
+        left: 0;
+        .header_wrapper {
+            height: 100%;
+            width: 100%;
+            flex-direction: row;
+            .ham_div {
+                height: 8rem;
+                width: 8rem;
+                margin-top: 4px;
             }
-            .icon {
-              font-size: 4rem;
+            .navs_right {
+                width: 30%;
+                height: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-right: 2rem;
+                .navs {
+                    .img {
+                        img {
+                            width: 4rem;
+                        }
+                        .icon {
+                            font-size: 4rem;
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 }

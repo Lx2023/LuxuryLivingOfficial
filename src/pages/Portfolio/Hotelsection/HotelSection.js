@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import './hotelSection.scss';
-import Aos from "aos";
 import "aos/dist/aos.css";
 import { CaretDownOutlined } from '@ant-design/icons'
-import Dropdown from "../../../components/PortfolioDropdown/Dropdown";
+import Aos from "aos";
 import axios from 'axios';
+
+import './hotelSection.scss';
+import Dropdown from "../../../components/PortfolioDropdown/Dropdown";
 import { appUrl } from '../../../config/appUrl'
 import Loading from '../../../utils/Loading/Loading'
 
@@ -61,20 +62,19 @@ function Port() {
         }
     }
 
-
     // API Sorting algo (sorting with descding alphatical order)
     const resultBrands = []
 
     const dataArray = brands.map((item) => {
         return item.name
     });
+    
     const sortedDataArray = (dataArray.sort())
 
     brands.forEach((item, index) => {
         const anotherData = brands.find((items) => items.name === sortedDataArray[index])
         resultBrands.push(anotherData)
     })
-
 
     return (
         <>

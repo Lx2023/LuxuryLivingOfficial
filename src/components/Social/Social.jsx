@@ -26,7 +26,7 @@ cursor:pointer;
 .icons{
     font-size: 25px;
 }
-@media (max-width:600px){
+@media (max-width:1200px){
     position: fixed;
     left:-15px;
     top: 45%;

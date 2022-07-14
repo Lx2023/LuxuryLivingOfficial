@@ -96,7 +96,7 @@
         .intro_wrapper {
             width: 70%;
             margin: 0 auto;
-            margin-top: -10rem;
+            margin-top: 10rem;
             height: 50rem;
             transform: perspective(500px) rotateX(40deg);
 
@@ -116,7 +116,7 @@
             }
 
             h1 {
-                animation: autoScrollMob 50s linear forwards 2ms infinite;
+                animation: autoScrollMob 34s linear forwards 2ms infinite;
                 font-size: 3rem;
             }
         }

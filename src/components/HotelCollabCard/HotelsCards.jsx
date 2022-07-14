@@ -201,7 +201,7 @@ const HotelsCards = ({ d }) => {
                                 </li>
                                 <li>
                                     <div className="bullet_points"></div>
-                                    <div className="bullet_points_">Accomdation :</div>
+                                    <div className="bullet_points_">Accomodation :</div>
                                     <div className="content"> {d.accomodation}</div>
                                 </li>
                             </ul>

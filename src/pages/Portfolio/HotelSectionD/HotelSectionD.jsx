@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 // import Aos from "aos";
 import { CaretDownOutlined } from "@ant-design/icons";
 import axios from "axios";
+import "aos/dist/aos.css";
 
 import "./style.scss";
-import "aos/dist/aos.css";
 import Dropdown from "../../../components/PortfolioDropdown/Dropdown";
 // import {data} from '../../../hotelDescModaldata/lxhotels'
 import { appUrl } from "../../../config/appUrl";
@@ -35,6 +35,7 @@ function HotelSectionD() {
         fetchData();
     }, []);
 
+    // May come in handy (was used for getting data from hotels api for the destination page)
     // useEffect(() => {
     //     Aos.init({ duration: 1500 });
     //     const destArr = hotels.map((d) => d.destination);
@@ -74,17 +75,20 @@ function HotelSectionD() {
         }
     };
 
-    const resultDestination = []
+    // Sorting Algoriths - sorts the api data with alphabatical order
+    const resultDestination = [];
 
     const dataArray = destinationImages.map((item) => {
-        return item.name
+        return item.name;
     });
-    const sortedDataArray = (dataArray.sort())
+    const sortedDataArray = dataArray.sort();
 
     destinationImages.forEach((item, index) => {
-        const anotherData = destinationImages.find((items) => items.name === sortedDataArray[index])
-        resultDestination.push(anotherData)
-    })
+        const anotherData = destinationImages.find(
+            (items) => items.name === sortedDataArray[index]
+        );
+        resultDestination.push(anotherData);
+    });
 
     const destinationData = resultDestination.map((dest, index) => {
         return (
