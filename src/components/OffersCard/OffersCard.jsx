@@ -33,6 +33,7 @@ const OffersCard = (props) => {
 
     const [hotelImage, setHotelImage] = useState();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const fetchHotelImage = async () => {
         const response = await
         (hotelId && fetch(`http://api.luxuryliving.in/hotel?pk=${hotelId}&&key=9d3480fc-49c4-4427-b19e-3f70d753656d`))

@@ -2,7 +2,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 import Header from '../../components/Header/Header'
 import './style.scss'
 import Social from '../../components/Social/Social'
-import { newHotels } from '../../data/newcollabsdata'
+// import { newHotels } from '../../data/newcollabsdata' Static collaboration data
 import Loading from '../../utils/Loading/Loading';
 
 const HotelsCards = React.lazy(() => import('../../components/HotelCollabCard/HotelsCards'))

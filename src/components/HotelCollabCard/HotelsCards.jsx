@@ -51,6 +51,7 @@ const HotelsCards = ({ d }) => {
 
     const mediaMatch = window.matchMedia('(max-width: 480px)');
     const [matches, setMatches] = useState(mediaMatch.matches);
+    const [hotelImage, setHotelImage] = useState();
 
     const navigate = useNavigate();
     const [showShare, SetShowShare] = useState(false);
@@ -134,6 +135,28 @@ const HotelsCards = ({ d }) => {
 
     // }
 
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchHotelImage = async () => {
+        const response = await
+        (d.brand_id && fetch(`http://api.luxuryliving.in/brand?pk=${d.brand_id}&&key=9d3480fc-49c4-4427-b19e-3f70d753656d`))
+        if (!response.ok) {
+            throw new Error("Something went wrong")
+        } else {
+            return response.json()
+        }
+
+    }
+    
+    useEffect(() => {
+        fetchHotelImage().then((res) => {
+            setHotelImage(res.logo_url);
+        })
+        .catch((e) => {
+            console.log(e.message)
+        })
+    }, [fetchHotelImage])
+
     return (
         <>
             {
@@ -179,7 +202,7 @@ const HotelsCards = ({ d }) => {
                     </div>
                     <div className="new_hotel_card_right">
                         <div className="logo">
-                            <img src={`images/${d.logo}`} alt="" />
+                            <img src={hotelImage} alt="" />
                         </div>
                         <h3 className="name">{d.name}</h3>
                         <div className="about_hotel">
