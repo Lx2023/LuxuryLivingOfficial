@@ -7,6 +7,7 @@
     color: white;
     margin-bottom: 3rem;
     padding: 0 1.5rem;
+    height: 260px;
     padding-bottom: 2rem;
     // &:hover {
     //     transform: scale(1.03);
@@ -36,7 +37,7 @@
             justify-content: center;
             margin-left: 1.2rem;
             h3 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             p {
                 font-size: 1rem;
@@ -62,7 +63,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 2; /* number of lines to show */
+            -webkit-line-clamp: 1; /* number of lines to show */
             -webkit-box-orient: vertical;
         }
         .offer_detail {
@@ -75,7 +76,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 3; /* number of lines to show */
+            -webkit-line-clamp: 2; /* number of lines to show */
             -webkit-box-orient: vertical;
         }
         .dates {

@@ -5,7 +5,6 @@ import { useEffect } from "react";
 const OffersCard = (props) => {
     const {
         hotelId,
-        hotelName,
         offerName,
         room_cate,
         offerDetail,
@@ -32,6 +31,7 @@ const OffersCard = (props) => {
     }
 
     const [hotelImage, setHotelImage] = useState();
+    const [hotelHeadName, setHotelHeadName] = useState()
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const fetchHotelImage = async () => {
@@ -47,12 +47,12 @@ const OffersCard = (props) => {
     useEffect(() => {
         fetchHotelImage().then((res) => {
             setHotelImage(res.pictures[0].url);
+            setHotelHeadName(res.name)
         })
         .catch((e) => {
             console.log(e.message)
         })
-    }, [fetchHotelImage])
-    
+    })
 
     return (
         <div
@@ -68,11 +68,10 @@ const OffersCard = (props) => {
             <div className="hotel_name">
                 <div className="img">
                     <img src={hotelImage ? hotelImage : " "} alt="" />
-                    {console.log(hotelImage)}
                 </div>
                 <div className="hotel_">
-                    <h3>{hotelName}</h3>
-                    {/* <p>Posted On : {postDate ? reverseString(`${postDate.slice(0,10)}`) : "Loading..."}</p> */}
+                    <h3>{hotelHeadName}</h3>
+                    <p>BrandName</p>
                 </div>
             </div>
             <div className="offer_details">

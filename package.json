@@ -17,6 +17,7 @@
     "express": "^4.18.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
+    "lodash.debounce": "^4.0.8",
     "nodemon": "^2.0.16",
     "pure-react-carousel": "^1.28.0",
     "react": "^17.0.2",
