@@ -127,6 +127,7 @@
 @media screen and (max-width: 450px) {
     .offers_card {
         width: 90%;
+        height: 210px;
         .hotel_name {
             width: 100%;
             height: 7rem;
@@ -147,17 +148,18 @@
             }
             .hotel_ {
                 h3 {
-                    font-size: 2.2rem;
+                    font-size: 1.2rem;
                 }
                 p {
                     font-size: 1.4rem;
                     margin-top: 0.3rem;
+                    letter-spacing: 2px;
                 }
             }
         }
         .offer_details {
             .offer_name {
-                font-size: 2.4rem;
+                font-size: 2rem;
             }
             .room_category {
                 font-size: 1.5rem;

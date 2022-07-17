@@ -186,6 +186,7 @@ const HotelsCards = ({ d }) => {
                     }}
                 >
                     <div className="new_hotel_card_left">
+                        <div>
                         <Slider {...settings} className="hotel_desc_img">
                             <div className="img" >
                                 <img src={d.pictures[0].url} alt="" />
@@ -197,6 +198,7 @@ const HotelsCards = ({ d }) => {
                                 <img src={d.pictures[2].url} alt="" />
                             </div>
                         </Slider>
+                        </div>
                     </div>
                     <div className="new_hotel_card_right">
                         <div className="logo">
