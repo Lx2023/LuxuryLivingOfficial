@@ -7,8 +7,10 @@
     color: white;
     margin-bottom: 3rem;
     padding: 0 1.5rem;
-    height: 260px;
+    height: 250px;
     padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
     // &:hover {
     //     transform: scale(1.03);
     // }
@@ -76,7 +78,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 2; /* number of lines to show */
+            -webkit-line-clamp: 1; /* number of lines to show */
             -webkit-box-orient: vertical;
         }
         .dates {
@@ -179,21 +181,21 @@
 
 @keyframes offer_card_length {
     from {
-        height: 300px;
+        height: 250px;
     }
 
     to {
-        height: 450px;
+        height: fit-content;
     }
 }
 
 @keyframes offer_card_decrease {
     from {
-        height: 450px;
+        height: fit-content;
     }
 
     to {
-        height: 260px;
+        height: 250px;
     }
 }
 
