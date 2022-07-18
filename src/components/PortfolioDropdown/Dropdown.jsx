@@ -33,8 +33,8 @@ const Dropdown = ({ ShowModal, destination, filterByD, hotels }) => {
         try {
             hotelsByDestinations = sortedArr.filter(
                 (i) =>
-                    i.destination.replace(/[^a-zA-Z ]/g, "").toLowerCase() ===
-                    destination.replace(/[^a-zA-Z ]/g, "").toLowerCase()
+                    i.destination_id ===
+                    destination
             );
         } catch (e) {
             hotelsByDestinations = [];

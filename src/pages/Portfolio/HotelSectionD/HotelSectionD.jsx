@@ -114,7 +114,7 @@ function HotelSectionD() {
                             className="button"
                             onClick={() => {
                                 ShowModal();
-                                setDestination(dest.name);
+                                setDestination(dest.id);
                             }}
                         >
                             Select Your Destination{" "}
