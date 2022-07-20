@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 // import Aos from "aos";
 import { CaretDownOutlined } from "@ant-design/icons";
 import axios from "axios";
@@ -17,6 +18,7 @@ function HotelSectionD() {
     const [hotels, setHotels] = useState([]);
     const [destinationImages, setDestinationImages] = useState([]);
     const [loading, setLoading] = useState(false);
+    const searchTermRedux = useSelector((state) => state.search.value);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -44,6 +46,7 @@ function HotelSectionD() {
     //     // console.log(uniqueDestArr);
     //     // const destArr = data.map(d => d.destination);
     // }, [hotels]);
+
 
     const animations = (num) => {
         let direction;
@@ -75,22 +78,8 @@ function HotelSectionD() {
         }
     };
 
-    // Sorting Algoriths - sorts the api data with alphabatical order
-    const resultDestination = [];
 
-    const dataArray = destinationImages.map((item) => {
-        return item.name;
-    });
-    const sortedDataArray = dataArray.sort();
-
-    destinationImages.forEach((item, index) => {
-        const anotherData = destinationImages.find(
-            (items) => items.name === sortedDataArray[index]
-        );
-        resultDestination.push(anotherData);
-    });
-
-    const destinationData = resultDestination.map((dest, index) => {
+    const destinationData = (searchTermRedux !== null ? (searchTermRedux.map((dest, index) => {
         return (
             <div
                 key={index}
@@ -124,7 +113,41 @@ function HotelSectionD() {
                 </div>
             </div>
         );
-    });
+    })) : (destinationImages.map((dest, index) => {
+        return (
+            <div
+                key={index}
+                className="port-card"
+                data-aos={`${animations(index)}`}
+            >
+                <div className="port-text">
+                    {/* if image is not availabe in api then using a default one */}
+                    <img
+                        className="port-logo"
+                        src={dest.icon_url === null ? "" : dest.icon_url}
+                        width="100px"
+                        height="100px"
+                        alt="destination-logo"
+                    />
+                    <h3>{dest.name}</h3>
+                </div>
+                <div className="port-content">
+                    <div className="upper">
+                        <div
+                            className="button"
+                            onClick={() => {
+                                ShowModal();
+                                setDestination(dest.id);
+                            }}
+                        >
+                            Select Your Destination{" "}
+                            <CaretDownOutlined className="dropdwon_icon" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    })))
 
     return (
         <>

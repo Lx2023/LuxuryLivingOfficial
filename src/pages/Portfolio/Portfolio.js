@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { debounce } from "lodash"
+import { useDispatch } from "react-redux"
+import { searchAdd } from "../../redux/indexReducer";
+
 import "./portfolio.scss";
 import HotelSection from "./Hotelsection/HotelSection";
 import Header from "../../components/Header/Header";
@@ -8,15 +12,47 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 const Portfolio = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const url = location.pathname.split("/")[1];
     const url2 = location.pathname.split("/")[2];
+    const [searchTerm, setSearchTerm] = useState("");
 
     const [active, setActive] = useState("brands");
 
     useEffect(() => {
         document.title = "Luxury Living - Portfolio";
     }, []);
+
+    const apiUrl = "http://api.luxuryliving.in/";
+    const apiKey = "key=9d3480fc-49c4-4427-b19e-3f70d753656d";
+    // const fetchBrandData = fetch(`${apiUrl}brands?${apiKey}`).then((res) => res.json()).then((resData) => console.log("current", resData))
+
+            const searchType = (text) => {
+                if (active === "brands") {
+                    if (text === "") {
+                        fetch(`${apiUrl}brands?${apiKey}`).then((res) => res.json()).then((resData) => dispatch(searchAdd(resData)))
+                    } else {
+                        fetch(`${apiUrl}search/brand?q=${text}&&${apiKey}`)
+                        .then((res) => res.json()).then((resData) => dispatch(searchAdd(resData)))
+                    }
+                } else {
+                    if (text === "") {
+                        fetch(`${apiUrl}destinations?${apiKey}`).then((res) => res.json()).then((resData) => {
+                            dispatch(searchAdd(resData))
+                            console.log(resData)
+                        })
+                    } else {
+                        fetch(`${apiUrl}search/destination?q=${text}&&${apiKey}`)
+                        .then((res) => res.json()).then((resData) => dispatch(searchAdd(resData)))
+                    }
+                }
+            };
+        
+            // Debouncing for performance
+            const handleTextSearch = debounce((text) => {
+                searchType(text)
+            }, 500)
 
     return (
         <div className="portfolio">
@@ -46,6 +82,8 @@ const Portfolio = () => {
                         onClick={() => {
                             navigate("");
                             setActive("brands");
+                            setSearchTerm("")
+                            dispatch(searchAdd(null))
                         }}
                     >
                         Brands
@@ -57,13 +95,18 @@ const Portfolio = () => {
                         onClick={() => {
                             navigate("destinations");
                             setActive("destinations");
+                            setSearchTerm("")
+                            dispatch(searchAdd(null))
                         }}
                     >
                         Destinations
                     </button>
                 </div>
-                <form className="portfolio_search">
-                    <input type="text" placeholder="SEARCH" />
+                <form className="portfolio_search" onSubmit={(e) => e.preventDefault()}>
+                    <input type="text" value={searchTerm} onChange={(e) => {
+                        handleTextSearch(e.target.value)
+                        setSearchTerm(e.target.value);
+                        }} placeholder={active === "destinations" ? "SEARCH DESTINATIONS..." : "SEARCH BRANDS..."} />
                 </form>
             </div>
             {url2 ? <Outlet /> : url ? <HotelSection /> : <Outlet />}

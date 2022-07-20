@@ -23,13 +23,13 @@
 }
 
 .port-container .port-card:hover {
-  height: 405px;
+  height: 350px;
 }
 
 .port-container .port-card .port-imgBx {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 240px;
   // left: 5px; it was making the img uncentered
   z-index: 1;
   display: flex;
@@ -140,3 +140,15 @@ select option{
     width: 100%;
   }
 }
+
+@media (max-width: 470px) {
+  .port-container {
+    .port-card {
+      max-width: 40rem;
+      .port-imgBx {
+        width: 36rem;
+      }
+    }
+  }
+}
+

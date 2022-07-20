@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import "aos/dist/aos.css";
 import { CaretDownOutlined } from '@ant-design/icons'
 import Aos from "aos";
@@ -15,6 +16,9 @@ function Port() {
     const [brands, setBrands] = useState([]);
     const [hotels, setHotels] = useState([]);
     const [loading, setLoading] = useState(false);
+
+    const searchTermRedux = useSelector((state) => state.search.valueTwo);
+    console.log("right now, ", searchTermRedux);
 
     useEffect(() => {
         Aos.init({ duration: 1800 });
@@ -62,20 +66,6 @@ function Port() {
         }
     }
 
-    // API Sorting algo (sorting with descding alphatical order)
-    const resultBrands = []
-
-    const dataArray = brands.map((item) => {
-        return item.name
-    });
-    
-    const sortedDataArray = (dataArray.sort())
-
-    brands.forEach((item, index) => {
-        const anotherData = brands.find((items) => items.name === sortedDataArray[index])
-        resultBrands.push(anotherData)
-    })
-
     return (
         <>
             {
@@ -88,7 +78,7 @@ function Port() {
                         <div className="port-container">
 
                             {
-                                resultBrands.map((b, ind) => (
+                                (searchTermRedux !== null ? (searchTermRedux.map((b, ind) => (
                                     <div className="port-card" key={b.id} data-aos={`${animations(ind)}`}>
                                         <div className="port-imgBx">
                                             <img src={b.logo_url} alt="brands_img" />
@@ -104,7 +94,23 @@ function Port() {
                                             </div>
                                         </div>
                                     </div>
-                                ))
+                                ))) : (brands.map((b, ind) => (
+                                    <div className="port-card" key={b.id} data-aos={`${animations(ind)}`}>
+                                        <div className="port-imgBx">
+                                            <img src={b.logo_url} alt="brands_img" />
+                                        </div>
+                                        <div className="port-content">
+                                            <div className="upper">
+                                                <div className="button" onClick={() => {
+                                                    ShowModal();
+                                                    setDestination(b.id)
+                                                    // setDestination(b.name.toLowerCase())
+                                                    // console.log(b.brands.toLowerCase());
+                                                }}>Select Your Hotel<CaretDownOutlined className='dropdwon_icon' /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))))
                             }
                         </div>
                     </div>

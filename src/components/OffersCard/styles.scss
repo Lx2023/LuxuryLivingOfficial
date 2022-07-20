@@ -167,7 +167,7 @@
                 font-size: 1.5rem;
             }
             .offer_detail {
-                font-size: 1.6rem;
+                font-size: 2.6rem;
             }
             .dates {
                 font-size: 1.4rem;
@@ -195,24 +195,24 @@
     }
 
     to {
-        height: 250px;
+        height: 255px;
     }
 }
 
 @media (max-width: 450px) {
     @keyframes offer_card_length {
         from {
-            height: 210px;
+            height: 250px;
         }
 
         to {
-            height: 450px;
+            height: fit-content;
         }
     }
 
     @keyframes offer_card_decrease {
         from {
-            height: 450px;
+            height: fit-content;
         }
 
         to {

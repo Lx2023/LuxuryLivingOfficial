@@ -121,15 +121,26 @@
 @media (max-width: 874px) {
     .portfolio {
         .search_by {
-            width: 590px;
+            width: 580px;
             height: auto;
             padding: 0 2rem;
-            .buttons, .portfolio_search {
+            padding-left: 0rem;
+            .portfolio_search {
                 height: 4rem;
+                width: 200px;
+                input {
+                    width: 200px;
+                }
 
                 .btns {
                     font-size: 1.2rem;
                 }
+            }
+
+            .buttons {
+                height: 4rem;
+                width: 340px;
+                justify-content: space-around;
             }
         }
     }
@@ -155,17 +166,27 @@
 @media (max-width: 491px) {
     .portfolio {
         .search_by {
-            width: 390px;
+            width: 260px;
             height: auto;
             padding: 0 2rem;
-            flex-direction: column;
-            gap: 6rem;
+            flex-direction: column-reverse;
+            gap: 4rem;
+            .portfolio_search {
+                width: 280px;
+                padding-bottom: 5rem;
+
+                input {
+                    width: 280px;
+                    height: 50px;
+                }
+            }
             .buttons {
-                height: 4rem;
-                width: 400px;
-                justify-content: space-around;
+                height: 50px;
+                width: 410px;
+                justify-content: center;
+                gap: 30px;
                 .btns {
-                    font-size: 1rem;
+                    font-size: 1.4rem;
                     width: 30%;
                 }
             }
