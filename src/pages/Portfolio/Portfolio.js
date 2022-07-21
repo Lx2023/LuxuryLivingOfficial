@@ -40,7 +40,6 @@ const Portfolio = () => {
                     if (text === "") {
                         fetch(`${apiUrl}destinations?${apiKey}`).then((res) => res.json()).then((resData) => {
                             dispatch(searchAdd(resData))
-                            console.log(resData)
                         })
                     } else {
                         fetch(`${apiUrl}search/destination?q=${text}&&${apiKey}`)

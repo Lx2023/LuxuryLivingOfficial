@@ -68,7 +68,7 @@ const OffersCard = (props) => {
                     </div>
                     <div className="hotel_">
                         <h3>{hotelHeadName}</h3>
-                        <p>BrandName</p>
+                        <p>BrandName/</p>
                     </div>
                 </div>
                 <div className="offer_details">

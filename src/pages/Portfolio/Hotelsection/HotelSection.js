@@ -9,6 +9,7 @@ import './hotelSection.scss';
 import Dropdown from "../../../components/PortfolioDropdown/Dropdown";
 import { appUrl } from '../../../config/appUrl'
 import Loading from '../../../utils/Loading/Loading'
+import DotLoading from "../../../components/DotLoading/DotLoading";
 
 function Port() {
     const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +74,7 @@ function Port() {
                 <Dropdown ShowModal={ShowModal} destination={destination} filterByD={false} hotels={hotels} />
             }
             {
-                loading ? <Loading /> :
+                loading ? <DotLoading /> :
                     <div className="port">
                         <div className="port-container">
 

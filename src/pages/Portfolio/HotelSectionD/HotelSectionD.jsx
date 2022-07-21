@@ -10,6 +10,7 @@ import Dropdown from "../../../components/PortfolioDropdown/Dropdown";
 // import {data} from '../../../hotelDescModaldata/lxhotels'
 import { appUrl } from "../../../config/appUrl";
 import Loading from "../../../utils/Loading/Loading";
+import DotLoading from "../../../components/DotLoading/DotLoading";
 
 function HotelSectionD() {
     const [isOpen, setIsOpen] = useState(false);
@@ -152,7 +153,7 @@ function HotelSectionD() {
     return (
         <>
             {loading ? (
-                <Loading />
+                <DotLoading />
             ) : (
                 <div className="port">
                     {isOpen && (
