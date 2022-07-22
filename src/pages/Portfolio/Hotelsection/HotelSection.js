@@ -8,7 +8,6 @@ import axios from 'axios';
 import './hotelSection.scss';
 import Dropdown from "../../../components/PortfolioDropdown/Dropdown";
 import { appUrl } from '../../../config/appUrl'
-import Loading from '../../../utils/Loading/Loading'
 import DotLoading from "../../../components/DotLoading/DotLoading";
 
 function Port() {
@@ -19,7 +18,6 @@ function Port() {
     const [loading, setLoading] = useState(false);
 
     const searchTermRedux = useSelector((state) => state.search.valueTwo);
-    console.log("right now, ", searchTermRedux);
 
     useEffect(() => {
         Aos.init({ duration: 1800 });

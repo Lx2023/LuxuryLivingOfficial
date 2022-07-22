@@ -16,7 +16,6 @@ const Portfolio = () => {
 
     const url = location.pathname.split("/")[1];
     const url2 = location.pathname.split("/")[2];
-    const [searchTerm, setSearchTerm] = useState("");
 
     const [active, setActive] = useState("brands");
 
@@ -34,7 +33,7 @@ const Portfolio = () => {
                         fetch(`${apiUrl}brands?${apiKey}`).then((res) => res.json()).then((resData) => dispatch(searchAdd(resData)))
                     } else {
                         fetch(`${apiUrl}search/brand?q=${text}&&${apiKey}`)
-                        .then((res) => res.json()).then((resData) => dispatch(searchAdd(resData)))
+                        .then((res) => res.json()).then((resData) => {dispatch(searchAdd(resData)); console.log(resData)})
                     }
                 } else {
                     if (text === "") {
@@ -43,7 +42,7 @@ const Portfolio = () => {
                         })
                     } else {
                         fetch(`${apiUrl}search/destination?q=${text}&&${apiKey}`)
-                        .then((res) => res.json()).then((resData) => dispatch(searchAdd(resData)))
+                        .then((res) => res.json()).then((resData) => {dispatch(searchAdd(resData)); console.log(resData)})
                     }
                 }
             };
@@ -81,7 +80,6 @@ const Portfolio = () => {
                         onClick={() => {
                             navigate("");
                             setActive("brands");
-                            setSearchTerm("")
                             dispatch(searchAdd(null))
                         }}
                     >
@@ -94,7 +92,6 @@ const Portfolio = () => {
                         onClick={() => {
                             navigate("destinations");
                             setActive("destinations");
-                            setSearchTerm("")
                             dispatch(searchAdd(null))
                         }}
                     >
@@ -102,9 +99,8 @@ const Portfolio = () => {
                     </button>
                 </div>
                 <form className="portfolio_search" onSubmit={(e) => e.preventDefault()}>
-                    <input type="text" value={searchTerm} onChange={(e) => {
+                    <input type="text" onChange={(e) => {
                         handleTextSearch(e.target.value)
-                        setSearchTerm(e.target.value);
                         }} placeholder={active === "destinations" ? "SEARCH DESTINATIONS..." : "SEARCH BRANDS..."} />
                 </form>
             </div>

@@ -9,7 +9,6 @@ import "./style.scss";
 import Dropdown from "../../../components/PortfolioDropdown/Dropdown";
 // import {data} from '../../../hotelDescModaldata/lxhotels'
 import { appUrl } from "../../../config/appUrl";
-import Loading from "../../../utils/Loading/Loading";
 import DotLoading from "../../../components/DotLoading/DotLoading";
 
 function HotelSectionD() {

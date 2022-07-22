@@ -29,6 +29,7 @@ const Offers = () => {
     // const [checked, setChecked] = useState();
     const [filters, setFilters] = useState([]);
     const [offerData, setOfferData] = useState([]);
+    const [offerSearchData, setOfferSearchData] = useState("");
 
     // handling filtering side bar
     const handleSidebar = () => {
@@ -93,6 +94,7 @@ const Offers = () => {
             })
             .then((actualData) => {
                 setOfferData(actualData);
+                console.log(actualData)
             })
             .catch((error) => {
                 console.log(error);
@@ -100,22 +102,44 @@ const Offers = () => {
     }, []);
 
     // iterating offers
-    const offerComponent = offerData.map((data) => {
+    const offerComponent = (offerSearchData === "" ? (offerData.map((data) => {
+        console.log("this one: ", data)
         return (
             <OffersCard
                 key={data.id}
                 hotelName={data.name}
+                brandName={data.brand}
+                hotelImage={data.thumbnail}
+                hotelHeading={data.hotel}
                 offerName={data.name}
                 room_cate={data.categories}
                 offerDetail={data.description}
                 startDates={data.offer_start_date}
                 endDates={data.offer_end_date}
                 setDetails={setDetails}
-                postDate={data.created_at}
                 hotelId={data.hotel_id}
             />
         );
-    });
+    })) : (
+        offerSearchData.map((data) => {
+            return (
+                <OffersCard
+                    key={data.id}
+                    hotelName={data.name}
+                    brandName={data.brand}
+                    hotelImage={data.thumbnail}
+                    hotelHeading={data.hotel}
+                    offerName={data.name}
+                    room_cate={data.categories}
+                    offerDetail={data.description}
+                    startDates={data.travel_start_date}
+                    endDates={data.travel_end_date}
+                    setDetails={setDetails}
+                    hotelId={data.hotel_id}
+                />
+            );
+        })
+    ))
 
     // Searching on Offer Page
 
@@ -129,9 +153,13 @@ const Offers = () => {
     // };
 
     const searchType = (text) => {
-        fetch(`${apiUrl}search-offer?q=${text}&&${apiKey}`)
+        if (text === "") {
+            setOfferSearchData(offerData)
+        } else {
+            fetch(`${apiUrl}search-offer?q=${text}&&${apiKey}`)
             .then((res) => res.json())
-            .then((result) => setOfferData(result));
+            .then((result) => {setOfferSearchData(result); console.log(result)});
+        }
     };
 
     // Debouncing for performance
