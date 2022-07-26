@@ -103,7 +103,6 @@ const Offers = () => {
 
     // iterating offers
     const offerComponent = (offerSearchData === "" ? (offerData.map((data) => {
-        console.log("this one: ", data)
         return (
             <OffersCard
                 key={data.id}
@@ -114,14 +113,17 @@ const Offers = () => {
                 offerName={data.name}
                 room_cate={data.categories}
                 offerDetail={data.description}
-                startDates={data.offer_start_date}
-                endDates={data.offer_end_date}
+                startDates={data.travel_start_date}
+                endDates={data.travel_end_date}
+                bookStartDates={data.book_by_start_date}
+                bookEndDates={data.book_by_end_date}
                 setDetails={setDetails}
                 hotelId={data.hotel_id}
             />
         );
     })) : (
         offerSearchData.map((data) => {
+            console.log(data)
             return (
                 <OffersCard
                     key={data.id}
@@ -134,6 +136,8 @@ const Offers = () => {
                     offerDetail={data.description}
                     startDates={data.travel_start_date}
                     endDates={data.travel_end_date}
+                    bookStartDates={data.book_by_start_date}
+                    bookEndDates={data.book_by_end_date}
                     setDetails={setDetails}
                     hotelId={data.hotel_id}
                 />
@@ -181,9 +185,7 @@ const Offers = () => {
                                 transform: `translateX(-${main}px)`,
                             }}
                         >
-                            <form className="searchBar">
-                                {" "}
-                                {/*onSubmit={search}*/}
+                            <form className="searchBar" onSubmit={(e) => e.preventDefault()}>
                                 <div className="search_bar">
                                     <input
                                         type="text"
@@ -193,7 +195,7 @@ const Offers = () => {
                                             handleText(e.target.value)
                                         }
                                         list="searchParams"
-                                        placeholder="Search Here"
+                                        placeholder="Search Here..."
                                     />
 
                                     {/* <datalist id="searchParams">

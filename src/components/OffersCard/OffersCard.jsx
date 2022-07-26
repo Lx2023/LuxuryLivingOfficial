@@ -8,6 +8,8 @@ const OffersCard = (props) => {
         offerDetail,
         startDates,
         endDates,
+        bookStartDates,
+        bookEndDates,
         brandName,
         hotelImage,
         hotelHeading,
@@ -60,17 +62,24 @@ const OffersCard = (props) => {
                 </div>
                 <div className="offer_details">
                     <h4 className="offer_name">{offerName}</h4>
-                     <diV className="dates_container">
-                        <p className="dates">
+                    <div className="dates_container">
+                        <p className="dates date-travel">
                             <span>Travel period: </span>{reverseString(startDates)} <span>to</span> {reverseString(endDates)}
                         </p>
-                    </diV>
+                    </div>
+                    <div className="dates_container">
+                        <p className="dates date-booking">
+                            {console.log(bookStartDates.slice(0,4))}
+                            <span>Booking period: </span>{bookStartDates.slice(0,4) === "2001" ? "" : reverseString(bookStartDates)} <span>{bookStartDates.slice(0,4) === "2001" ? "Upto" : "to"}</span> {reverseString(bookEndDates)}
+                        </p>
+                    </div>
                     <hr />
                     <p
                         className={`offer_detail ${animate ? webkitAnimation : ""}`}
                     >
                         {offerDetail}
                     </p>
+                    {animate && <hr />}
 
                     <h6
                         className={`room_category ${animate ? webkitAnimation : ""}`}
